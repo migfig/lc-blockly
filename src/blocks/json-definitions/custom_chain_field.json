@@ -1,0 +1,1112 @@
+{
+    "type": "APIChain",
+    "template": "custom_chain_field",
+    "settings": [],
+    "properties": [
+        {
+            "name": "type",
+            "description": "Is the type of <b>chain</b> to be applied while <i>configuring the chain</i>",
+            "type": "select",
+            "options": [
+                {
+                    "name": "APIChain"
+                },
+                {
+                    "name": "AnalyzeDocumentChain"
+                },
+                {
+                    "name": "ChatVectorDBChain"
+                },
+                {
+                    "name": "ConstitutionalChain"
+                },
+                {
+                    "name": "ConversationChain"
+                },
+                {
+                    "name": "ConversationalRetrievalChain"
+                },
+                {
+                    "name": "FlareChain"
+                },
+                {
+                    "name": "GraphCypherQAChain"
+                },
+                {
+                    "name": "GraphQAChain"
+                },
+                {
+                    "name": "HypotheticalDocumentEmbedder"
+                },
+                {
+                    "name": "LLMBashChain"
+                },
+                {
+                    "name": "LLMChain"
+                },
+                {
+                    "name": "LLMCheckerChain"
+                },
+                {
+                    "name": "LLMMathChain"
+                },
+                {
+                    "name": "LLMRequestsChain"
+                },
+                {
+                    "name": "LLMSummarizationCheckerChain"
+                },
+                {
+                    "name": "MapReduceChain"
+                },
+                {
+                    "name": "OpenAIModerationChain"
+                },
+                {
+                    "name": "OpenAPIEndpointChain"
+                },
+                {
+                    "name": "PALChain"
+                },
+                {
+                    "name": "QAGenerationChain"
+                },
+                {
+                    "name": "QAWithSourcesChain"
+                },
+                {
+                    "name": "RetrievalQA"
+                },
+                {
+                    "name": "RetrievalQAWithSourcesChain"
+                },
+                {
+                    "name": "SQLDatabaseChain"
+                },
+                {
+                    "name": "SQLDatabaseSequentialChain"
+                },
+                {
+                    "name": "SequentialChain"
+                },
+                {
+                    "name": "SimpleSequentialChain"
+                },
+                {
+                    "name": "TransformChain"
+                },
+                {
+                    "name": "VectorDBQA"
+                },
+                {
+                    "name": "VectorDBQAWithSourcesChain"
+                }
+            ],
+            "optionName": "name",
+            "default": 0,
+            "refProperty": "settings",
+            "required": true
+        },
+        {
+            "name": "template",
+            "description": "Select the <b>template</b> source",
+            "type": "select",
+            "options": [],
+            "optionName": "name",
+            "optionTitle": "category",
+            "default": 0,
+            "hideIfSingleOption": true,
+            "required": true
+        },
+        {
+            "name": "settings",
+            "type": "array",
+            "required": true,
+            "refProperty": "type",
+            "itemProperties": [
+                {
+                    "name": "APIChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the APIChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        },
+                        {
+                            "name": "api_docs",
+                            "description": "Is the value to the APIChain chain <b>api_docs</b> argument",
+                            "type": "input",
+                            "default": "",
+                            "required": true
+                        },
+                        {
+                            "name": "question_key",
+                            "description": "Is the value to the APIChain chain <b>question_key</b> argument",
+                            "type": "input",
+                            "default": "question",
+                            "required": true
+                        },
+                        {
+                            "name": "output_key",
+                            "description": "Is the value to the APIChain chain <b>output_key</b> argument",
+                            "type": "input",
+                            "default": "output",
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "AnalyzeDocumentChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the AnalyzeDocumentChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        },
+                        {
+                            "name": "input_key",
+                            "description": "Is the value to the AnalyzeDocumentChain chain <b>input_key</b> argument",
+                            "type": "input",
+                            "default": "input_document",
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "ChatVectorDBChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the ChatVectorDBChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        },
+                        {
+                            "name": "output_key",
+                            "description": "Is the value to the ChatVectorDBChain chain <b>output_key</b> argument",
+                            "type": "input",
+                            "default": "answer",
+                            "required": true
+                        },
+                        {
+                            "name": "return_source_documents",
+                            "description": "Is the value to the ChatVectorDBChain chain <b>return_source_documents</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        },
+                        {
+                            "name": "return_generated_question",
+                            "description": "Is the value to the ChatVectorDBChain chain <b>return_generated_question</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        },
+                        {
+                            "name": "top_k_docs_for_context",
+                            "description": "Is the value to the ChatVectorDBChain chain <b>top_k_docs_for_context</b> argument",
+                            "type": "number",
+                            "min": 1,
+                            "max": 100,
+                            "step": 1,
+                            "default": 4,
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "ConstitutionalChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the ConstitutionalChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        },
+                        {
+                            "name": "return_intermediate_steps",
+                            "description": "Is the value to the ConstitutionalChain chain <b>return_intermediate_steps</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "ConversationChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the ConversationChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "ConversationalRetrievalChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the ConversationalRetrievalChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        },
+                        {
+                            "name": "output_key",
+                            "description": "Is the value to the ConversationalRetrievalChain chain <b>output_key</b> argument",
+                            "type": "input",
+                            "default": "answer",
+                            "required": true
+                        },
+                        {
+                            "name": "return_source_documents",
+                            "description": "Is the value to the ConversationalRetrievalChain chain <b>return_source_documents</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        },
+                        {
+                            "name": "return_generated_question",
+                            "description": "Is the value to the ConversationalRetrievalChain chain <b>return_generated_question</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "FlareChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the FlareChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        },
+                        {
+                            "name": "min_prob",
+                            "description": "Is the value to the FlareChain chain <b>min_prob</b> argument",
+                            "type": "number",
+                            "min": 0.1,
+                            "max": 100.0,
+                            "step": 0.1,
+                            "default": 0.2,
+                            "required": true
+                        },
+                        {
+                            "name": "min_token_gap",
+                            "description": "Is the value to the FlareChain chain <b>min_token_gap</b> argument",
+                            "type": "number",
+                            "min": 1,
+                            "max": 100,
+                            "step": 1,
+                            "default": 5,
+                            "required": true
+                        },
+                        {
+                            "name": "num_pad_tokens",
+                            "description": "Is the value to the FlareChain chain <b>num_pad_tokens</b> argument",
+                            "type": "number",
+                            "min": 1,
+                            "max": 100,
+                            "step": 1,
+                            "default": 2,
+                            "required": true
+                        },
+                        {
+                            "name": "max_iter",
+                            "description": "Is the value to the FlareChain chain <b>max_iter</b> argument",
+                            "type": "number",
+                            "min": 1,
+                            "max": 100,
+                            "step": 1,
+                            "default": 10,
+                            "required": true
+                        },
+                        {
+                            "name": "start_with_retrieval",
+                            "description": "Is the value to the FlareChain chain <b>start_with_retrieval</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "GraphCypherQAChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the GraphCypherQAChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        },
+                        {
+                            "name": "input_key",
+                            "description": "Is the value to the GraphCypherQAChain chain <b>input_key</b> argument",
+                            "type": "input",
+                            "default": "query",
+                            "required": true
+                        },
+                        {
+                            "name": "output_key",
+                            "description": "Is the value to the GraphCypherQAChain chain <b>output_key</b> argument",
+                            "type": "input",
+                            "default": "result",
+                            "required": true
+                        },
+                        {
+                            "name": "top_k",
+                            "description": "Is the value to the GraphCypherQAChain chain <b>top_k</b> argument",
+                            "type": "number",
+                            "min": 1,
+                            "max": 100,
+                            "step": 1,
+                            "default": 10,
+                            "required": true
+                        },
+                        {
+                            "name": "return_intermediate_steps",
+                            "description": "Is the value to the GraphCypherQAChain chain <b>return_intermediate_steps</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        },
+                        {
+                            "name": "return_direct",
+                            "description": "Is the value to the GraphCypherQAChain chain <b>return_direct</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "GraphQAChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the GraphQAChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        },
+                        {
+                            "name": "input_key",
+                            "description": "Is the value to the GraphQAChain chain <b>input_key</b> argument",
+                            "type": "input",
+                            "default": "query",
+                            "required": true
+                        },
+                        {
+                            "name": "output_key",
+                            "description": "Is the value to the GraphQAChain chain <b>output_key</b> argument",
+                            "type": "input",
+                            "default": "result",
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "HypotheticalDocumentEmbedder",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the HypotheticalDocumentEmbedder chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "LLMBashChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the LLMBashChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        },
+                        {
+                            "name": "input_key",
+                            "description": "Is the value to the LLMBashChain chain <b>input_key</b> argument",
+                            "type": "input",
+                            "default": "question",
+                            "required": true
+                        },
+                        {
+                            "name": "output_key",
+                            "description": "Is the value to the LLMBashChain chain <b>output_key</b> argument",
+                            "type": "input",
+                            "default": "answer",
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "LLMChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the LLMChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        },
+                        {
+                            "name": "output_key",
+                            "description": "Is the value to the LLMChain chain <b>output_key</b> argument",
+                            "type": "input",
+                            "default": "text",
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "LLMCheckerChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the LLMCheckerChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "LLMMathChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the LLMMathChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "LLMRequestsChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the LLMRequestsChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        },
+                        {
+                            "name": "text_length",
+                            "description": "Is the value to the LLMRequestsChain chain <b>text_length</b> argument",
+                            "type": "number",
+                            "min": 1,
+                            "max": 100,
+                            "step": 1,
+                            "default": 8000,
+                            "required": true
+                        },
+                        {
+                            "name": "requests_key",
+                            "description": "Is the value to the LLMRequestsChain chain <b>requests_key</b> argument",
+                            "type": "input",
+                            "default": "requests_result",
+                            "required": true
+                        },
+                        {
+                            "name": "input_key",
+                            "description": "Is the value to the LLMRequestsChain chain <b>input_key</b> argument",
+                            "type": "input",
+                            "default": "url",
+                            "required": true
+                        },
+                        {
+                            "name": "output_key",
+                            "description": "Is the value to the LLMRequestsChain chain <b>output_key</b> argument",
+                            "type": "input",
+                            "default": "output",
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "LLMSummarizationCheckerChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the LLMSummarizationCheckerChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "MapReduceChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the MapReduceChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        },
+                        {
+                            "name": "input_key",
+                            "description": "Is the value to the MapReduceChain chain <b>input_key</b> argument",
+                            "type": "input",
+                            "default": "input_text",
+                            "required": true
+                        },
+                        {
+                            "name": "output_key",
+                            "description": "Is the value to the MapReduceChain chain <b>output_key</b> argument",
+                            "type": "input",
+                            "default": "output_text",
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "OpenAIModerationChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the OpenAIModerationChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        },
+                        {
+                            "name": "error",
+                            "description": "Is the value to the OpenAIModerationChain chain <b>error</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        },
+                        {
+                            "name": "input_key",
+                            "description": "Is the value to the OpenAIModerationChain chain <b>input_key</b> argument",
+                            "type": "input",
+                            "default": "input",
+                            "required": true
+                        },
+                        {
+                            "name": "output_key",
+                            "description": "Is the value to the OpenAIModerationChain chain <b>output_key</b> argument",
+                            "type": "input",
+                            "default": "output",
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "OpenAPIEndpointChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the OpenAPIEndpointChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        },
+                        {
+                            "name": "return_intermediate_steps",
+                            "description": "Is the value to the OpenAPIEndpointChain chain <b>return_intermediate_steps</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        },
+                        {
+                            "name": "instructions_key",
+                            "description": "Is the value to the OpenAPIEndpointChain chain <b>instructions_key</b> argument",
+                            "type": "input",
+                            "default": "instructions",
+                            "required": true
+                        },
+                        {
+                            "name": "output_key",
+                            "description": "Is the value to the OpenAPIEndpointChain chain <b>output_key</b> argument",
+                            "type": "input",
+                            "default": "output",
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "PALChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the PALChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "QAGenerationChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the QAGenerationChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        },
+                        {
+                            "name": "input_key",
+                            "description": "Is the value to the QAGenerationChain chain <b>input_key</b> argument",
+                            "type": "input",
+                            "default": "text",
+                            "required": true
+                        },
+                        {
+                            "name": "output_key",
+                            "description": "Is the value to the QAGenerationChain chain <b>output_key</b> argument",
+                            "type": "input",
+                            "default": "questions",
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "QAWithSourcesChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the QAWithSourcesChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        },
+                        {
+                            "name": "question_key",
+                            "description": "Is the value to the QAWithSourcesChain chain <b>question_key</b> argument",
+                            "type": "input",
+                            "default": "question",
+                            "required": true
+                        },
+                        {
+                            "name": "input_docs_key",
+                            "description": "Is the value to the QAWithSourcesChain chain <b>input_docs_key</b> argument",
+                            "type": "input",
+                            "default": "docs",
+                            "required": true
+                        },
+                        {
+                            "name": "answer_key",
+                            "description": "Is the value to the QAWithSourcesChain chain <b>answer_key</b> argument",
+                            "type": "input",
+                            "default": "answer",
+                            "required": true
+                        },
+                        {
+                            "name": "sources_answer_key",
+                            "description": "Is the value to the QAWithSourcesChain chain <b>sources_answer_key</b> argument",
+                            "type": "input",
+                            "default": "sources",
+                            "required": true
+                        },
+                        {
+                            "name": "return_source_documents",
+                            "description": "Is the value to the QAWithSourcesChain chain <b>return_source_documents</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "RetrievalQA",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the RetrievalQA chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        },
+                        {
+                            "name": "input_key",
+                            "description": "Is the value to the RetrievalQA chain <b>input_key</b> argument",
+                            "type": "input",
+                            "default": "query",
+                            "required": true
+                        },
+                        {
+                            "name": "output_key",
+                            "description": "Is the value to the RetrievalQA chain <b>output_key</b> argument",
+                            "type": "input",
+                            "default": "result",
+                            "required": true
+                        },
+                        {
+                            "name": "return_source_documents",
+                            "description": "Is the value to the RetrievalQA chain <b>return_source_documents</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "RetrievalQAWithSourcesChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the RetrievalQAWithSourcesChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        },
+                        {
+                            "name": "question_key",
+                            "description": "Is the value to the RetrievalQAWithSourcesChain chain <b>question_key</b> argument",
+                            "type": "input",
+                            "default": "question",
+                            "required": true
+                        },
+                        {
+                            "name": "input_docs_key",
+                            "description": "Is the value to the RetrievalQAWithSourcesChain chain <b>input_docs_key</b> argument",
+                            "type": "input",
+                            "default": "docs",
+                            "required": true
+                        },
+                        {
+                            "name": "answer_key",
+                            "description": "Is the value to the RetrievalQAWithSourcesChain chain <b>answer_key</b> argument",
+                            "type": "input",
+                            "default": "answer",
+                            "required": true
+                        },
+                        {
+                            "name": "sources_answer_key",
+                            "description": "Is the value to the RetrievalQAWithSourcesChain chain <b>sources_answer_key</b> argument",
+                            "type": "input",
+                            "default": "sources",
+                            "required": true
+                        },
+                        {
+                            "name": "return_source_documents",
+                            "description": "Is the value to the RetrievalQAWithSourcesChain chain <b>return_source_documents</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        },
+                        {
+                            "name": "reduce_k_below_max_tokens",
+                            "description": "Is the value to the RetrievalQAWithSourcesChain chain <b>reduce_k_below_max_tokens</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        },
+                        {
+                            "name": "max_tokens_limit",
+                            "description": "Is the value to the RetrievalQAWithSourcesChain chain <b>max_tokens_limit</b> argument",
+                            "type": "number",
+                            "min": 1,
+                            "max": 100,
+                            "step": 1,
+                            "default": 3375,
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "SQLDatabaseChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the SQLDatabaseChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        },
+                        {
+                            "name": "top_k",
+                            "description": "Is the value to the SQLDatabaseChain chain <b>top_k</b> argument",
+                            "type": "number",
+                            "min": 1,
+                            "max": 100,
+                            "step": 1,
+                            "default": 5,
+                            "required": true
+                        },
+                        {
+                            "name": "input_key",
+                            "description": "Is the value to the SQLDatabaseChain chain <b>input_key</b> argument",
+                            "type": "input",
+                            "default": "query",
+                            "required": true
+                        },
+                        {
+                            "name": "output_key",
+                            "description": "Is the value to the SQLDatabaseChain chain <b>output_key</b> argument",
+                            "type": "input",
+                            "default": "result",
+                            "required": true
+                        },
+                        {
+                            "name": "return_intermediate_steps",
+                            "description": "Is the value to the SQLDatabaseChain chain <b>return_intermediate_steps</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        },
+                        {
+                            "name": "return_direct",
+                            "description": "Is the value to the SQLDatabaseChain chain <b>return_direct</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        },
+                        {
+                            "name": "use_query_checker",
+                            "description": "Is the value to the SQLDatabaseChain chain <b>use_query_checker</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "SQLDatabaseSequentialChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the SQLDatabaseSequentialChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        },
+                        {
+                            "name": "input_key",
+                            "description": "Is the value to the SQLDatabaseSequentialChain chain <b>input_key</b> argument",
+                            "type": "input",
+                            "default": "query",
+                            "required": true
+                        },
+                        {
+                            "name": "output_key",
+                            "description": "Is the value to the SQLDatabaseSequentialChain chain <b>output_key</b> argument",
+                            "type": "input",
+                            "default": "result",
+                            "required": true
+                        },
+                        {
+                            "name": "return_intermediate_steps",
+                            "description": "Is the value to the SQLDatabaseSequentialChain chain <b>return_intermediate_steps</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "SequentialChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the SequentialChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        },
+                        {
+                            "name": "return_all",
+                            "description": "Is the value to the SequentialChain chain <b>return_all</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "SimpleSequentialChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the SimpleSequentialChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        },
+                        {
+                            "name": "strip_outputs",
+                            "description": "Is the value to the SimpleSequentialChain chain <b>strip_outputs</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        },
+                        {
+                            "name": "input_key",
+                            "description": "Is the value to the SimpleSequentialChain chain <b>input_key</b> argument",
+                            "type": "input",
+                            "default": "input",
+                            "required": true
+                        },
+                        {
+                            "name": "output_key",
+                            "description": "Is the value to the SimpleSequentialChain chain <b>output_key</b> argument",
+                            "type": "input",
+                            "default": "output",
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "TransformChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the TransformChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "VectorDBQA",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the VectorDBQA chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        },
+                        {
+                            "name": "input_key",
+                            "description": "Is the value to the VectorDBQA chain <b>input_key</b> argument",
+                            "type": "input",
+                            "default": "query",
+                            "required": true
+                        },
+                        {
+                            "name": "output_key",
+                            "description": "Is the value to the VectorDBQA chain <b>output_key</b> argument",
+                            "type": "input",
+                            "default": "result",
+                            "required": true
+                        },
+                        {
+                            "name": "return_source_documents",
+                            "description": "Is the value to the VectorDBQA chain <b>return_source_documents</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        },
+                        {
+                            "name": "k",
+                            "description": "Is the value to the VectorDBQA chain <b>k</b> argument",
+                            "type": "number",
+                            "min": 1,
+                            "max": 100,
+                            "step": 1,
+                            "default": 4,
+                            "required": true
+                        },
+                        {
+                            "name": "search_type",
+                            "description": "Is the value to the VectorDBQA chain <b>search_type</b> argument",
+                            "type": "input",
+                            "default": "similarity",
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "VectorDBQAWithSourcesChain",
+                    "properties": [
+                        {
+                            "name": "verbose",
+                            "description": "Is the value to the VectorDBQAWithSourcesChain chain <b>verbose</b> argument",
+                            "type": "checkbox",
+                            "default": false,
+                            "required": true
+                        },
+                        {
+                            "name": "question_key",
+                            "description": "Is the value to the VectorDBQAWithSourcesChain chain <b>question_key</b> argument",
+                            "type": "input",
+                            "default": "question",
+                            "required": true
+                        },
+                        {
+                            "name": "input_docs_key",
+                            "description": "Is the value to the VectorDBQAWithSourcesChain chain <b>input_docs_key</b> argument",
+                            "type": "input",
+                            "default": "docs",
+                            "required": true
+                        },
+                        {
+                            "name": "answer_key",
+                            "description": "Is the value to the VectorDBQAWithSourcesChain chain <b>answer_key</b> argument",
+                            "type": "input",
+                            "default": "answer",
+                            "required": true
+                        },
+                        {
+                            "name": "sources_answer_key",
+                            "description": "Is the value to the VectorDBQAWithSourcesChain chain <b>sources_answer_key</b> argument",
+                            "type": "input",
+                            "default": "sources",
+                            "required": true
+                        },
+                        {
+                            "name": "return_source_documents",
+                            "description": "Is the value to the VectorDBQAWithSourcesChain chain <b>return_source_documents</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        },
+                        {
+                            "name": "k",
+                            "description": "Is the value to the VectorDBQAWithSourcesChain chain <b>k</b> argument",
+                            "type": "number",
+                            "min": 1,
+                            "max": 100,
+                            "step": 1,
+                            "default": 4,
+                            "required": true
+                        },
+                        {
+                            "name": "reduce_k_below_max_tokens",
+                            "description": "Is the value to the VectorDBQAWithSourcesChain chain <b>reduce_k_below_max_tokens</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        },
+                        {
+                            "name": "max_tokens_limit",
+                            "description": "Is the value to the VectorDBQAWithSourcesChain chain <b>max_tokens_limit</b> argument",
+                            "type": "number",
+                            "min": 1,
+                            "max": 100,
+                            "step": 1,
+                            "default": 3375,
+                            "required": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

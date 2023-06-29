@@ -1,0 +1,4 @@
+{
+    "python.pythonPath": "/home/<your-user>/anaconda3/envs/<your-gpu-env>/bin/python",
+    "code-runner.enableAppInsights": false
+}

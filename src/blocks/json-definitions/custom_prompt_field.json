@@ -1,0 +1,57 @@
+{
+    "type": "Prompt",
+    "template": "custom_prompt_field",
+    "settings": [
+        {
+            "name": "value",
+            "value": "Is the universe infinite"
+        }
+    ],
+    "properties": [
+        {
+            "name": "type",
+            "description": "Is the type of <b>prompt</b> to be applied while <i>configuring the chain prompts</i>",
+            "type": "select",
+            "options": [
+                {
+                    "name": "Prompt"
+                }
+            ],
+            "optionName": "name",
+            "default": 0,
+            "refProperty": "settings",
+            "required": true
+        },
+        {
+            "name": "template",
+            "description": "Select the <b>template</b> source",
+            "type": "select",
+            "options": [],
+            "optionName": "name",
+            "optionTitle": "category",
+            "default": 0,
+            "hideIfSingleOption": true,
+            "required": true
+        },
+        {
+            "name": "settings",
+            "type": "array",
+            "required": true,
+            "refProperty": "type",
+            "itemProperties": [
+                {
+                    "name": "Prompt",
+                    "properties": [
+                        {
+                            "name": "value",
+                            "description": "Is the <b>prompt</b> value",
+                            "type": "textarea",
+                            "default": "Is the universe infinite",
+                            "required": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

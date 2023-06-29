@@ -1,0 +1,222 @@
+{
+    "type": "CharacterTextSplitter",
+    "template": "custom_splitter_field",
+    "settings": [],
+    "properties": [
+        {
+            "name": "type",
+            "description": "Is the type of <b>splitter</b> to be applied while <i>configuring the splitter</i>",
+            "type": "select",
+            "options": [
+                {
+                    "name": "CharacterTextSplitter"
+                },
+                {
+                    "name": "LatexTextSplitter"
+                },
+                {
+                    "name": "MarkdownTextSplitter"
+                },
+                {
+                    "name": "NLTKTextSplitter"
+                },
+                {
+                    "name": "PythonCodeTextSplitter"
+                },
+                {
+                    "name": "RecursiveCharacterTextSplitter"
+                },
+                {
+                    "name": "SpacyTextSplitter"
+                },
+                {
+                    "name": "TextSplitter"
+                },
+                {
+                    "name": "TokenTextSplitter"
+                }
+            ],
+            "optionName": "name",
+            "default": 0,
+            "refProperty": "settings",
+            "required": true
+        },
+        {
+            "name": "template",
+            "description": "Select the <b>template</b> source",
+            "type": "select",
+            "options": [],
+            "optionName": "name",
+            "optionTitle": "category",
+            "default": 0,
+            "hideIfSingleOption": true,
+            "required": true
+        },
+        {
+            "name": "settings",
+            "type": "array",
+            "required": true,
+            "refProperty": "type",
+            "itemProperties": [
+                {
+                    "name": "CharacterTextSplitter",
+                    "properties": [
+                        {
+                            "name": "separator",
+                            "description": "Is the value to the CharacterTextSplitter splitter <b>separator</b> argument",
+                            "type": "input",
+                            "default": "\\n\\n",
+                            "required": true
+                        },
+                        {
+                            "name": "chunk_size",
+                            "description": "Is the value to the CharacterTextSplitter splitter <b>chunk_size</b> argument",
+                            "type": "number",
+                            "min": 1,
+                            "max": 100,
+                            "step": 1,
+                            "default": 1024,
+                            "required": true
+                        },
+                        {
+                            "name": "chunk_overlap",
+                            "description": "Is the value to the CharacterTextSplitter splitter <b>chunk_overlap</b> argument",
+                            "type": "number",
+                            "min": 1,
+                            "max": 100,
+                            "step": 1,
+                            "default": 64,
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "LatexTextSplitter",
+                    "properties": []
+                },
+                {
+                    "name": "MarkdownTextSplitter",
+                    "properties": []
+                },
+                {
+                    "name": "NLTKTextSplitter",
+                    "properties": [
+                        {
+                            "name": "separator",
+                            "description": "Is the value to the NLTKTextSplitter splitter <b>separator</b> argument",
+                            "type": "input",
+                            "default": "\\n\\n",
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "PythonCodeTextSplitter",
+                    "properties": []
+                },
+                {
+                    "name": "RecursiveCharacterTextSplitter",
+                    "properties": [
+                        {
+                            "name": "keep_separator",
+                            "description": "Is the value to the RecursiveCharacterTextSplitter splitter <b>keep_separator</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        },
+                        {
+                            "name": "chunk_size",
+                            "description": "Is the value to the RecursiveCharacterTextSplitter splitter <b>chunk_size</b> argument",
+                            "type": "number",
+                            "min": 1,
+                            "max": 100,
+                            "step": 1,
+                            "default": 1024,
+                            "required": true
+                        },
+                        {
+                            "name": "chunk_overlap",
+                            "description": "Is the value to the RecursiveCharacterTextSplitter splitter <b>chunk_overlap</b> argument",
+                            "type": "number",
+                            "min": 1,
+                            "max": 100,
+                            "step": 1,
+                            "default": 64,
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "SpacyTextSplitter",
+                    "properties": [
+                        {
+                            "name": "separator",
+                            "description": "Is the value to the SpacyTextSplitter splitter <b>separator</b> argument",
+                            "type": "input",
+                            "default": "\\n\\n",
+                            "required": true
+                        },
+                        {
+                            "name": "pipeline",
+                            "description": "Is the value to the SpacyTextSplitter splitter <b>pipeline</b> argument",
+                            "type": "input",
+                            "default": "en_core_web_sm",
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "TextSplitter",
+                    "properties": [
+                        {
+                            "name": "chunk_size",
+                            "description": "Is the value to the TextSplitter splitter <b>chunk_size</b> argument",
+                            "type": "number",
+                            "min": 1,
+                            "max": 100,
+                            "step": 1,
+                            "default": 4000,
+                            "required": true
+                        },
+                        {
+                            "name": "chunk_overlap",
+                            "description": "Is the value to the TextSplitter splitter <b>chunk_overlap</b> argument",
+                            "type": "number",
+                            "min": 1,
+                            "max": 100,
+                            "step": 1,
+                            "default": 200,
+                            "required": true
+                        },
+                        {
+                            "name": "keep_separator",
+                            "description": "Is the value to the TextSplitter splitter <b>keep_separator</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        },
+                        {
+                            "name": "add_start_index",
+                            "description": "Is the value to the TextSplitter splitter <b>add_start_index</b> argument",
+                            "type": "checkbox",
+                            "default": true,
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "TokenTextSplitter",
+                    "properties": [
+                        {
+                            "name": "encoding_name",
+                            "description": "Is the value to the TokenTextSplitter splitter <b>encoding_name</b> argument",
+                            "type": "input",
+                            "default": "gpt2",
+                            "required": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
