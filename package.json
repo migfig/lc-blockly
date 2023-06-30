@@ -1,6 +1,7 @@
 {
   "name": "ml-blockly",
   "version": "0.1.0",
+  "homepage": "https://migfig.github.io/lc-blockly",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
@@ -38,6 +39,8 @@
   },
   "types": "./node_modules/blockly/blockly.d.ts",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "audit": "npm audit fix",
     "update": "npm update",
     "postinstall": "cp -r node_modules/blockly/media public/media",
@@ -62,6 +65,7 @@
     ]
   },
   "devDependencies": {
-    "@types/webpack-env": "^1.15.2"
+    "@types/webpack-env": "^1.15.2",
+    "gh-pages": "^5.0.0"
   }
 }
